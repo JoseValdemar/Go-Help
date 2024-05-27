@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GoHelp</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardTerreno.html">
+                <img src="img/logo_final.png" alt="..." width="150" height="35"/>
+                
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="dashboardTerreno.html" target="_self">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+            
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="gerir-iniciativaGestor.html">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Gerir Iniciativas</span>
+                </a>                
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+            
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <h1 id=tituloBold class="text-Black-Bold"></h1>
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow d-none" id="userProfileDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none" id="loginLink">
+                            <a class="nav-link" href="../../front/dist/login.html">Iniciar Sessão</a>
+                        </li>
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="full-width-container">
+
+                    <div class="tab-menu">
+                        <button class="tab-button active" data-tab="Dados" onclick="openTab('Dados')">Dados</button>
+                        <button class="tab-button" data-tab="AlocarProfissionnais"
+                            onclick="openTab('AlocarProfissionnais')">Alocar Profissionnais</button>
+                        <button class="tab-button" data-tab="GerirMateriais" onclick="openTab('GerirMateriais')">Gerir
+                            Materiais</button>
+                    </div>
+
+                    <!-- Dados -->
+                    <div id="Dados" class="tab-content" style="display:none">
+                        <div class="container-fluid">
+
+                            <div class="container"></div>
+                            <div class="container">
+                                <form id="inscricaoForm" data-sb-form-api-token="API_TOKEN">
+                                    <div class="row align-items-stretch mb-5">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <!-- Title input-->
+                                                <div class="label">Título</div>
+                                                <input class="form-control-4" id="titulo" type="text"
+                                                    placeholder="Título *" data-sb-validations="required" />
+                                                <div class="invalid-feedback" data-sb-feedback="phone:required">Insira
+                                                    um título.</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Type dropdown -->
+                                                <div class="label">Tipo</div>
+                                                <select class="form-control-4" id="type" required>
+                                                    <option value="" selected disabled hidden>Tipo *</option>
+                                                    <option value="Corrida/Maratona">Corrida/Maratona</option>
+                                                    <option value="Aulas">Aulas</option>
+                                                    <option value="Jogos de Futebol">Jogos de Futebol</option>
+                                                    <option value="Workshop">Workshop</option>
+                                                    <option value="Outro">Outro</option>
+                                                </select>
+                                                <div class="invalid-feedback">Insira a localidade.</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Localidade input-->
+                                                <div class="label">Morada</div>
+                                                <input class="form-control-4" id="localidade" type="text"
+                                                    placeholder="Morada *" data-sb-validations="required" />
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira a
+                                                    localidade.</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Region dropdown -->
+                                                <div class="label">Região</div>
+                                                <select class="form-control-4" id="region" required>
+                                                    <option value="" selected disabled hidden>Região *</option>
+                                                    <option value="Norte">Norte</option>
+                                                    <option value="Centro">Centro</option>
+                                                    <option value="Lisboa">Lisboa</option>
+                                                    <option value="Alentejo">Alentejo</option>
+                                                    <option value="Algarve">Algarve</option>
+                                                </select>
+                                                <div class="invalid-feedback">Insira a localidade.</div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Data input-->
+                                                <div class="label">Data</div>
+                                                <input type="date" class="form-control-4" id="data" required>
+                                            </div>
+                                            <div class="form-group"
+                                                style="display: flex; justify-content: center; gap: 20px;">
+                                                <!-- Starting Hour input -->
+                                                <div style="flex: 1; text-align: center;">
+                                                    <div class="label">Hora de Início</div>
+                                                    <input class="form-control-4" id="horaInicio" type="time"
+                                                        required />
+                                                </div>
+                                                <!-- Finishing Hour input -->
+                                                <div style="flex: 1; text-align: center;">
+                                                    <div class="label">Hora de Fim</div>
+                                                    <input class="form-control-4" id="horaFim" type="time" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Gestor input-->
+                                                <div class="label">Gestor</div>
+                                                <input class="form-control-4 readonly-field" id="gestor" type="text"
+                                                    placeholder="Gestor *" readonly>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira um
+                                                    gestor.</div>
+                                            </div>
+                                            <div class="form-group"
+                                                style="display: flex; justify-content: center; gap: 20px;">
+                                                <div style="flex: 1; text-align: center;">
+                                                    <div class="label">Max Participantes</div>
+                                                    <input class="form-control-4 readonly-field"
+                                                        id="maxparticipantesindividual" type="text" readonly>
+                                                </div>
+                                                <div style="flex: 1; text-align: center;">
+                                                    <div class="label">Participantes</div>
+                                                    <input class="form-control-4 readonly-field"
+                                                        id="participantesindividual" type="text" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Dinheiro input-->
+                                                <div class="label">Dinheiro Angariado</div>
+                                                <input class="form-control-4 readonly-field" id="doacoes" type="text"
+                                                    placeholder="Dinheiro já angariado *" readonly>
+                                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira a
+                                                    localidade.</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <div class="label">Descrição</div>
+                                                <textarea class="form-control-4" id="descricao"
+                                                    placeholder="Descrição *" maxlength="350" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <!-- Imagem input-->
+                                                <div class="label">Imagem</div>
+                                                <img id="displayImage" src="" alt="Iniciativa Image" class="img-fluid">
+                                            </div>
+                                            <br></br>
+                                            <button class="btn btn-primary btn-xl text-uppercase"
+                                                type="submit">Submeter</button>
+                                        </div>
+                                    </div>
+                                    <!-- Submit success message-->
+                                    <div class="d-none" id="submitSuccessMessage">
+                                        <div class="text-center text-bg-secondary mb-3">
+                                            <div class="fw-bolder">Iniciativa atualizada com sucesso!</div>
+                                        </div>
+                                    </div>
+                                    <!-- Submit error message-->
+                                    <div class="d-none" id="submitErrorMessage">
+                                        <div class="text-center text-danger mb-3">Erro ao criar Evento! Causa possivel:
+                                            Nenhuma imagem carregada.</div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.container-fluid -->
+
+                            <br>
+                        </div>
+                    </div>
+
+                    <!-- Alocar Profissionnais -->
+                    <div id="AlocarProfissionnais" class="tab-content">
+                        <div class="label CriarIniciativa-table-titulo">Profissionais</div>
+                        <div class="profissionais-table-container2">
+                            <table class="profissionais-table2">
+                                <thead>
+                                    <tr>
+                                        <th>Função</th>
+                                        <th>Mín. Necessário</th>
+                                        <th>Selecionado(s)</th>
+                                        <th>Custo (€/horas)</th>
+                                        <th>Custo Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <!-- Rows will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="totalCustoProfissionais">Total: €0</div>
+                        <div id="professionalTables" class="d-flex justify-content-around">
+                            <div>
+                              <h3>Ajudantes</h3>
+                              <table id="ajudanteTable" class="table">
+                                <thead>
+                                  <tr>
+                                    <th >Nome</th>
+                                    <th>Selecionar</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                            <div>
+                              <h3>Advogados</h3>
+                              <table id="advogadoTable" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Nome</th>
+                                    <th>Selecionar</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                            <div>
+                              <h3>Gestores de Seguros</h3>
+                              <table id="gestorSegurosTable" class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Nome</th>
+                                    <th>Selecionar</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                    </div> <!-- Este conteúdo de aba será exibido inicialmente -->
+
+                    <!-- GerirMateriais -->
+                    <div id="GerirMateriais" class="tab-content" style="display:none">
+                        <div class="label CriarIniciativa-table-titulo">Materiais</div>
+                        <div class="materiais-table-container2">
+                            <table class="materiais-table2">
+                                <thead>
+                                    <tr>
+                                        <th>Material</th>
+                                        <th>Mín. Necessário</th>
+                                        <th>Em Posse</th>
+                                        <th>Custo Unitário</th>
+                                        <th>Custo Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="materiaisTableBody">
+                                    <!-- Rows for materiais will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="totalCustoMateriais">Total: €0</div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Go Help | Política de Privacidade, Proteção de Dados e Termos e Condições; </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/gerir-iniciativa-individualGestor.js"></script>
+
+</body>
+
+</html>

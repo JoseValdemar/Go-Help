@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="google-signin-client_id" content="1032595557413-mtl7p9jf2j7t7gmt9d1n19bfh6o046to.apps.googleusercontent.com">
+        <title>GoHelp</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="./assets/logo_final.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <!-- Static Links -->
+                        <li class="nav-item"><a class="nav-link" href="#indicators">Impacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#activities">Atividades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Iniciativas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre Nós</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#create_iniciative">Faça a Diferença</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contactos</a></li>
+                        <!-- More static links -->
+                        
+                        <!-- User Profile Dropdown, initially hidden -->
+                        <li class="nav-item dropdown d-none" id="userProfileDropdown"> <!-- Add 'dropdown' to make this dropdown -->
+                            <button class="dropdown-toggle"><img class="img-profile rounded-circle" src="assets/img/undraw_profile_1.svg"></button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="pedidos.html">Pedidos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </li>
+                        
+                        <!-- Login Link, initially hidden -->
+                        <li class="nav-item d-none" id="loginLink">
+                            <a class="nav-link" href="login.html">Iniciar Sessão</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Bem-vindo!</div>
+                <div class="masthead-heading text-uppercase">AJUDE-NOS A<br> AJUDAR!</div>
+                <a href="doar.html" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                    Doar
+                </a>
+            </div>
+        </header>
+        <!-- Indicators Grid-->
+        <section class="page-section bg-light" id="indicators">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Impacto</h2>
+                    <br><br><br>
+                </div>
+                <div class="row text-center">
+                    <div id=indicatorCards class="row">
+                        <!-- Fundos Angariados Card -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body" style="position: relative; min-height: 150px;"> <!-- Set position relative for absolute child positioning -->
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="my-3 text-primary" style="font-size: 25px; font-weight: bold;">
+                                                Fundos Angariados
+                                            </div>
+                                            <div id="doacoes" class="h5 mb-0 font-weight-bold text-gray-800" style="position: absolute; bottom: 30px; left: 0; width: 100%; font-size: 40px;">
+                                                <!-- Content here will align to the bottom of the card-body -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Iniciativas Realizadas Card -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body" style="position: relative; min-height: 150px;"> <!-- Set position relative for absolute child positioning -->
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="my-3 text-success" style="font-size: 25px; font-weight: bold;">
+                                                Iniciativas Realizadas
+                                            </div>
+                                            <div id="acoes" class="h5 mb-0 font-weight-bold text-gray-800" style="position: absolute; bottom: 30px; left: 0; width: 100%; font-size: 40px;">
+                                                <!-- Content here will align to the bottom of the card-body -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Profissionais no Terreno Card Example -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body" style="position: relative; min-height: 150px;"> <!-- Set position relative for absolute child positioning -->
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="my-3 text-danger" style="font-size: 25px; font-weight: bold;">
+                                                Profissionais Empregados
+                                            </div>
+                                            <div id="profissionais" class="h5 mb-0 font-weight-bold text-gray-800" style="position: absolute; bottom: 30px; left: 0; width: 100%; font-size: 40px;">
+                                                <!-- Content here will align to the bottom of the card-body -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Closing row for card decks -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Services-->
+        <section class="page-section" id="activities">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Atividades</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-solid fa-running fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Corridas/Maratonas</h4>
+                        <p class="text-muted">Com percursos de média e longa distância, citadinos e rurais. Caminhe por uma boa causa.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-users fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Aulas</h4>
+                        <p class="text-muted">Aulas interativas variadas com o objetivo de promover saúde e bem-estar.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="far fa-futbol fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Jogos de Futebol</h4>
+                        <p class="text-muted">Jogos de futebol solidários, reunindo pessoas através da paixão pelo futebol.</p>
+                    </div>
+                    <div class="col-md-4 index-atividades">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-tools fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Workshops</h4>
+                        <p class="text-muted">Workshops interativos com o propósito de enriquecer habilidades num ambiente colaborativo.</p>
+                    </div>
+                    <div class="col-md-3 index-atividades-2">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fab fa-angellist fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Outros</h4>
+                        <p class="text-muted">Feiras, palestras e muitas outras atividades à volta do enriquecimento pessoal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Iniciativas</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1" onclick="updateModal('#portfolioModal1','Corrida do Mosteiro', 'Mire de Tibães, Braga','Junte-se a nós numa corrida noturna pelas históricas ruas de Mire de Tibães, iluminando caminhos com esperança e união pela caridade.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Corrida do Mosteiro</div>
+                                <div class="portfolio-caption-subheading text-muted">Mire de Tibães, Braga</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2" onclick="updateModal('#portfolioModal2','Corrida do Adepto', 'Estádio Dr. Magalhães Pessoa, Leiria','Vista as cores da sua equipa e venha fazer parte deste evento energizante, unindo os fãs de futebol  numa corrida de pura paixão pelas ruas de Leiria.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Corrida do Adepto</div>
+                                <div class="portfolio-caption-subheading text-muted">Estádio Dr. Magalhães Pessoa, Leiria</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3" onclick="updateModal('#portfolioModal3','Corrida Social de Campolide','Campolide, Lisboa','Participe de uma emocionante corrida pelas pitorescas ruas de Campolide. Cada passo dado contribui para apoiar projetos locais de inclusão social, promovendo saúde e bem-estar na comunidade.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Corrida Social de Campolide</div>
+                                <div class="portfolio-caption-subheading text-muted">Campolide, Lisboa</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4" onclick="updateModal('#portfolioModal4','Jogo Solidário','Estádio Municipal de Braga','Participe no nosso jogo solidário de futebol e junte-se a nós numa tarde emocionante de desporto e solidariedade. Reúna-se com amigos e familiares para apoiar uma causa nobre enquanto desfruta de um jogo animado.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Jogo Solidário</div>
+                                <div class="portfolio-caption-subheading text-muted">Estádio Municipal de Braga</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5" onclick="updateModal('#portfolioModal5','Aula Solidária de Zumba','São João de Areias, Viseu','Descubra a alegria e a energia na nossa aula de Zumba, uma explosão de ritmo e movimento que transforma o seu treino numa festa.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Aula Solidária de Zumba</div>
+                                <div class="portfolio-caption-subheading text-muted">São João de Areias, Viseu</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6" onclick="updateModal('#portfolioModal6','Aula Solidária de Yoga','Complexo Desportivo da Rodovia, Braga','Descubra a paz interior e a flexibilidade na nossa aula de yoga, uma prática rejuvenescedora ao ar livre, ideal para alinhar corpo, mente e espírito.')">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Aula Solidária de Yoga</div>
+                                <div class="portfolio-caption-subheading text-muted">Complexo Desportivo da Rodovia, Braga</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br>
+                <div class="text-center"><a href="iniciativas.html" class="btn btn-primary btn-xl text-uppercase">Ver Mais</a></div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Sobre Nós</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2019</h4>
+                                <h4 class="subheading">A Nossa Origem</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Nascida da paixão conjunta de um grupo de amigos por desporto e bem-estar, a GoHelp foi criada com o objetivo de promover eventos desportivos que unissem pessoas e apoiassem comunidades. O nosso primeiro evento, uma corrida de 5km para beneficiar uma clínica de saúde local, atraiu 300 participantes, estabelecendo uma nossa missão e visão.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2020-2021</h4>
+                                <h4 class="subheading">Expansão e Diversificação</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Em resposta aos desafios impostos pela pandemia do COVID-19, adaptamos-nos rapidamente, inovando com a organização de eventos virtuais e atividades online. Essa mudança não apenas nos permitiu continuar promovendo a saúde e o bem-estar em tempos de distanciamento social, mas também expandiu nossa diversidade de ofertas, alcançando um público global. </p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2022</h4>
+                                <h4 class="subheading">Inovação e Parcerias</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Em 2022, lançamos uma plataforma digital para facilitar a inscrição em eventos e evidenciar o impacto social de nossa atuação. Estabelecemos parcerias estratégicas com marcas e organizações, ampliando nosso alcance e impacto.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2023-Atulidade</h4>
+                                <h4 class="subheading">Hoje e o Futuro</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Reconhecida como líder na organização de eventos de saúde e desporto com impacto social, a GoHelp organiza mais de 50 eventos anualmente, promovendo estilos de vida saudáveis e apoiando causas diversas. Com olhos no futuro, continuamos comprometidos em expandir nossa atuação e explorar novas formas de engajamento social</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Faça Parte
+                                <br />
+                                da Nossa
+                                <br />
+                                História!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Create Iniciative-->
+        <section class="page-section bg-light" id="create_iniciative">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Crie A SUA INICIATIVA</h2>
+                </div>
+                <div class="text-center">
+                    <div class="section-text">
+                            <p">Num mundo onde os desafios de saúde física e mental se tornam cada vez mais presentes nas nossas 
+                            comunidades, nunca foi tão importante agir e fazer a diferença. A verdade é que todos nós temos o poder de 
+                            impactar positivamente a vida de alguém, e iniciar uma iniciativa de caridade é uma das maneiras mais 
+                            eficazes de fazer isso.</p>
+                    </div>
+                </div>
+                <br><br>
+                <div class="text-center"><a class="btn btn-primary btn-xl text-uppercase" href="criar_iniciativa.html">Criar Iniciativa</a></div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contacte-nos</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control-3" id="name" type="text" placeholder="Nome *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira o seu nome.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control-3" id="email" type="email" placeholder="Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Insira o seu email.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email inválido.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control-3" id="phone" type="tel" placeholder="Contacto *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Insira o seu contacto.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control-2" id="message" placeholder="Escreva a sua mensagem *" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Insira a sua mensagem.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Mensagem enviada com sucesso!</div>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div></div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar mensagem</button></div>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">GoHelp Portugal | Comité Português. Todos os Direitos reservados</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Política de Privacidade e Proteção de Dados</a>
+                        <a class="link-dark text-decoration-none" href="#!">Termos e Condições</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <p class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Quarta-feira, 12 de Junho
+                                        </li>
+                                    </ul>
+                                    <!-- Botão Inscrever para a iniciativa com ID 35 -->
+                                    <a href="inscricao.html?evento=35" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                                    <p  class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Sábado, 15 de Junho
+                                        </li>
+                                    </ul>
+                                    <a href="inscricao.html?evento=36" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                                    <p  class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Terça-feira, 11 de Junho
+                                        </li>
+                                    </ul>
+                                    <a href="inscricao.html?evento=37" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                                    <p  class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Segunda, 22 de Julho
+                                        </li>
+                                    </ul>
+                                    <a href="inscricao.html?evento=38" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                                    <p  class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Sábado, 27 de Julho
+                                        </li>
+                                    </ul>
+                                    <a href="inscricao.html?evento=39" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                                    <p  class="item-description text-muted">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Data:</strong>
+                                            Sábado, 27 de Julho
+                                        </li>
+                                    </ul>
+                                    <a href="inscricao.html?evento=40" class="btn btn-primary btn-xl text-uppercase" target="_blank">
+                                        Inscrição
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!-- Core theme JS-->
+        <script src="js/index.js"></script>
+        <script src="js/index2.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <!-- Bootstrap NOVOS-->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+    </body>
+</html>

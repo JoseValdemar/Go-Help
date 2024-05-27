@@ -1,0 +1,30 @@
+/* Additional custom styles if needed */
+body {
+    background-color: #f4f4f4; /* Sample background color */
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sample box shadow for the form container */
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Styles for the form */
+.form-group label {
+    font-weight: bold;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary button color */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary button color */
+}
+
+/* You might want to add media queries or other responsive CSS here */

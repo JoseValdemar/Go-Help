@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>GoHelp</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="./assets/logo_final.png" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item dropdown d-none" id="userProfileDropdown"> <!-- Add 'dropdown' to make this dropdown -->
+                            <button class="dropdown-toggle"><img class="img-profile rounded-circle" src="assets/img/undraw_profile_1.svg"></button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="pedidos.html">Pedidos</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                            </div>
+                            </li>
+                            <li class="nav-item d-none" id="loginLink">
+                                <a class="nav-link" href="login.html">Iniciar Sessão</a>
+                            </li>
+    
+</ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="headergeral">
+            <div class="headergeral-subheading">INICIATIVAS</div>
+            
+        </header>
+        <!-- Inscrição-->
+        <section class="page-section" id="inscricao">
+            <div class="container">
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="inscricaoForm" data-sb-form-api-token="API_TOKEN" onsubmit="storeFormData(); return false;">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <!-- Title input-->
+                                <input class="form-control-4" id="titulo" type="text" placeholder="Título *" maxlength="30" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Insira um título.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Type dropdown -->
+                                <select class="form-control-4" id="type" required onchange="updateStyle(this)">
+                                    <option value="" selected disabled hidden>Tipo *</option>
+                                    <option value="Corrida/Maratona">Corrida/Maratona</option>
+                                    <option value="Aulas">Aulas</option>
+                                    <option value="Jogos de Futebol">Jogos de Futebol</option>
+                                    <option value="Workshop">Workshop</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                                <div class="invalid-feedback">Insira a localidade.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Localidade input-->
+                                <input class="form-control-4" id="localidade" type="text" placeholder="Morada *" maxlength="50" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira a localidade.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Region dropdown -->
+                                <select class="form-control-4" id="region" required onchange="updateStyle(this)">
+                                    <option value="" selected disabled hidden>Região *</option>
+                                    <option value="Norte">Norte</option>
+                                    <option value="Centro">Centro</option>
+                                    <option value="Lisboa">Lisboa</option>
+                                    <option value="Alentejo">Alentejo</option>
+                                    <option value="Algarve">Algarve</option>
+                                </select>
+                                <div class="invalid-feedback">Insira a localidade.</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Data input-->
+                                <input type="date" class="form-control-4" id="data" required onchange="updateStyle(this)">
+                            </div>
+                            <div class="form-group" style="display: flex; justify-content: center; gap: 20px;">
+                                <!-- Starting Hour input -->
+                                <div style="flex: 1; text-align: center;">
+                                    <label for="horaInicio">Hora de Início *</label>
+                                    <input class="form-control-4" id="horaInicio" type="time" required />
+                                </div>
+                                <!-- Finishing Hour input -->
+                                <div style="flex: 1; text-align: center;">
+                                    <label for="horaFim">Hora de Fim *</label>
+                                    <input class="form-control-4" id="horaFim" type="time" required />
+                                </div>
+                            </div>
+                            <div class="form-group" style="position: relative;">
+                                <!-- Imagem input-->
+                                <input class="form-control-4" id="imagem" type="file" placeholder="Imagem *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Insira uma imagem.</div>
+                              </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <textarea class="form-control-4" id="descricao" placeholder="Descrição *" maxlength="150" required></textarea>
+                            </div>
+                            <br></br>
+                            <button class="btn btn-primary btn-xl text-uppercase">Submeter</button>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage"><div class="text-center text-danger mb-3">Sugestão de Iniciativa efetuada com Sucesso! Aguarde resposta.</div></div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar a mensagem!</div></div>
+                </form>
+            </div>
+        </section>
+
+    </body>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/index2.js"></script>
+        <script src="js/criar-iniciativa.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- Footer-->
+    <footer class="footer py-lg-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lgg-4 text-lg-start">GoHelp Portugal | Comité Português. Todos os Direitos reservados</div>
+                <div class="col-lgg-4 my-3 my-lg-0">
+                </div>
+                <div class="col-lgg-4 text-lg-end">
+                    <a class="link-darkk text-decoration-none me-3" href="#!">Política de Privacidade e Proteção de Dados</a>
+                    <a class="link-darkk text-decoration-none" href="#!">Termos e Condições</a>
+                </div>
+            </div>
+        </div>
+       </footer>
+</html>
